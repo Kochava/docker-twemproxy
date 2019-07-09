@@ -4,7 +4,7 @@ Twemproxy (nutcracker) is a lightwieght proxy for memcached and redis.
 
 ## Run
 
-There are 2 ways to run the twemproxy container.  A configuration can be dynamically configured through environment variables by specifying the servers (and other parameters) through the `TWEMPROXY_SERVERS` variable.  A full list of configuration options are listed below.
+There are 2 ways to run the twemproxy container.  A configuration can be dynamically configured through environment variables by specifying the servers (and other parameters) through the `TWEMPROXY_SERVERS` variable.  If you are not specifiying the path to a configuration file, you must at least define `TWEMPROXY_SERVERS`.  A full list of configuration options are listed below.
 
 ```
 docker run -p 11211 -p 22222 \
@@ -49,3 +49,4 @@ docker run -p 11211 -p 22222 \
 * `TWEMPROXY_REDIS`: Whether or not the pools speaks as Redis.  Default false.
 * `TWEMPROXY_REDIS_DB`: The redis db number.  There is no default and is only used when `TWEMPROXY_REDIS` is set to true.
 * `TWEMPROXY_REDIS_AUTH`: Authenticate to the Redis server on connect.  There is no default and is only used when `TWEMPROXY_REDIS` is set to true.
+* `TWEMPROXY_SERVERS`: A comma seperated list of server:port:priority entries to use in the `servers` block of the nutcracker configuration.
