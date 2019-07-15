@@ -10,7 +10,7 @@ There are 2 ways to run the twemproxy container.  A configuration can be dynamic
 docker run -p 11211 -p 22222 \
   -e 'TWEMPROXY_SERVERS=127.0.0.1:11311:1,127.0.0.1:11411:1,127.0.0.1:11511:1' \
   -e 'TWEMPROXY_TIMEOUT=10' \
-  ctxswitch/twemproxy
+  kochava/twemproxy
 ```
 
 The other way to start up twemproxy is to specify the TWEMPROXY_CONFIG variable to reference a config that has been prebaked into a container image or added to the image as part of it's initialization process in a scheduling framework such as Kubernetes or Marathon.
@@ -18,7 +18,7 @@ The other way to start up twemproxy is to specify the TWEMPROXY_CONFIG variable 
 ```
 docker run -p 11211 -p 22222 \
   -e 'TWEMPROXY_CONFIG=/path/to/nutcracker.yml' \
-  ctxswitch/twemproxy
+  kochava/twemproxy
 ```
 
 ## Environment Variables
